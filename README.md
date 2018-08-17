@@ -23,3 +23,12 @@ $ ssh root@mydomain.tld -p 1337
 ### Use with docker-compose
 I built this image in order to use it along with a nginx and fpm-php container for transferring files via sftp.
 If you are interested in a Dockerfile which fulfills this need: [this way](https://github.com/Hermsi1337/docker-compose/blob/master/full_php_dev_stack/docker-compose.yml)
+
+### Build and push to quay.io
+```
+docker build .
+docker images
+docker tag 84c89fd8da58 quay.io/90poe/ssh-tunnel
+docker login quay.io
+docker push quay.io/90poe/ssh-tunnel
+```
